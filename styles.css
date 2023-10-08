@@ -1,0 +1,28 @@
+#container-princ{
+    display: flex;
+    justify-content:center;
+    background-image: url("../image/imagprin.png");
+}
+
+#container-form {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    flex-flow:row wrap;
+}
+
+.answers-container{
+    display: flex;
+
+}
+h1{
+    text-align: center;
+    text-decoration: overline;
+    margin: 25%;
+    font-size: 120px;
+}
+
+.answers-container {
+    display: flex;
+    flex-direction: column;
+}
