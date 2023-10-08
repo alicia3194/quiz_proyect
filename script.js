@@ -194,7 +194,7 @@ document.querySelector("main").appendChild(formulario);
 // Función para mostrar las respuestas correctas
 function showCorrectAnswers() {
   const respuestaContainer = document.getElementById("respuesta-container");
-  respuestaContainer.innerHTML = ""; // Limpiar el contenido anterior si lo hay
+  respuestaContainer.innerHTML = "";
 
   let correctAnswers = 0;
 
@@ -221,7 +221,6 @@ function showCorrectAnswers() {
   `;
 }
 
-// Agregar un evento click al botón de enviar
 resultadoButton.addEventListener("click", () => {
   showCorrectAnswers();
 });
