@@ -3,6 +3,7 @@ const playQuiz = [
     name: "¿Qué ves en la imagen?",
     imageLink: "../image/img1.png",
     respuestas: ["Unicornio", "El oso y el madreño", "Oso", "Logo WWF"],
+    respuestaCorrecta: "Unicornio",
   },
   {
     name: "¿Cuál fue la primera película de Walt Disney?",
@@ -13,11 +14,13 @@ const playQuiz = [
       "Los aristogatos",
       "Tob y Toby",
     ],
+    respuestaCorrecta: "Blanca nieves y los siete enanitos",
   },
   {
     name: "¿Cuántos círculos ves en la imagen?",
     imageLink: "../image/img2.png",
     respuestas: ["3", "6", "7", "Nigúno"],
+    respuestaCorrecta: "6",
   },
   {
     name: "¿De que película es esta banda sonora?",
@@ -26,6 +29,7 @@ const playQuiz = [
       source: "../audio/audio1.mp4",
     },
     respuestas: ["Troya", "Centurión", "Gladiator", "El señor de los Anillos"],
+    respuestaCorrecta: "Gladiator",
   },
   {
     name: "Memoriza los objetos",
@@ -34,6 +38,7 @@ const playQuiz = [
       source: "../video/video2.mov",
     },
     respuestas: ["1, 5 y 8", "1, 3 y 7", "1, 5 y 6", "2, 4 y 7"],
+    respuestaCorrecta: "1,5 y 6",
   },
   {
     name: "¿En qué película se dice esta frase?",
@@ -42,6 +47,7 @@ const playQuiz = [
       source: "../video/video1.mov",
     },
     respuestas: ["La sirenita", "Cenicienta", "Brave", "Ninguna de ellas"],
+    respuestaCorrecta: "Ninguna de ellas",
   },
   {
     name: "¿Cuál es el alimento más peligroso del mundo?",
@@ -73,6 +79,7 @@ const playQuiz = [
       "La vida es bella",
       "La vida de Brian",
     ],
+    respuestaCorrecta: "La vida es bella",
   },
   {
     name: "¿Cuál es el alimento más peligroso del mundo?",
@@ -88,19 +95,19 @@ const playQuiz = [
 const formulario = document.createElement("form");
 formulario.setAttribute("id", "container-form");
 
-playQuiz.map((element, index) => {
-  //crear div para cada pregunta
+playQuiz.forEach((element, index) => {
+  // Crear div para cada pregunta
   const questionContainer = document.createElement("div");
   questionContainer.classList.add(`question-container${index + 1}`);
-  //empezar con las secciones del form
+  // Comenzar con las secciones del formulario
   const round1 = document.createElement("legend");
   round1.textContent = element.name;
   round1.classList.add("title-answ");
-  //div para las cuatr respuestas
+  // Div para las cuatro respuestas
   const answersContainer = document.createElement("div");
   answersContainer.classList.add("answers-container");
 
-  //condicional para meter imagen,sonido o video
+  // Condicional para agregar imagen, audio o video
   if (element.imageLink) {
     const imageContainer = document.createElement("div");
     imageContainer.classList.add("image-container");
@@ -141,7 +148,7 @@ playQuiz.map((element, index) => {
     questionContainer.appendChild(videoContainer);
   }
 
-  element.respuestas.map((respuesta, i) => {
+  element.respuestas.forEach((respuesta, i) => {
     const answerContainer = document.createElement("div");
     answerContainer.classList.add(`answ${i + 1}-container`);
 
@@ -160,16 +167,61 @@ playQuiz.map((element, index) => {
     answersContainer.appendChild(answerContainer);
   });
 
-  //crear div para cada respuesta con su clase meter imagenes, videos y sonido, usar Condicional
-
-  //crear input y label
-
+  // Agregar cada pregunta al formulario
   questionContainer.appendChild(round1);
   questionContainer.appendChild(answersContainer);
 
   formulario.appendChild(questionContainer);
 });
 
+// Crear el div para mostrar las respuestas correctas
+const respuestaContainer = document.createElement("div");
+respuestaContainer.setAttribute("id", "respuesta-container");
+
+// Crear el botón dentro del div "respuestaContainer"
+const resultadoButton = document.createElement("button");
+resultadoButton.textContent = "Enviar";
+resultadoButton.setAttribute("id", "calculate-button");
+
+// Agregar el botón al div "respuestaContainer"
+respuestaContainer.appendChild(resultadoButton);
+
+// Agregar el div "respuestaContainer" al formulario
+formulario.appendChild(respuestaContainer);
+
 document.querySelector("main").appendChild(formulario);
 
-//faltan preguntas y dar el resultado de las correctas
+// Función para mostrar las respuestas correctas
+function showCorrectAnswers() {
+  const respuestaContainer = document.getElementById("respuesta-container");
+  respuestaContainer.innerHTML = ""; // Limpiar el contenido anterior si lo hay
+
+  let correctAnswers = 0;
+
+  playQuiz.forEach((element, index) => {
+    const selectedInput = document.querySelector(
+      `input[name="question${index + 1}"]:checked`
+    );
+
+    if (selectedInput) {
+      const selectedValue = selectedInput.value;
+
+      if (
+        selectedValue ===
+        `respuesta${element.respuestas.indexOf(element.respuestaCorrecta) + 1}`
+      ) {
+        correctAnswers++;
+      }
+    }
+  });
+
+  respuestaContainer.innerHTML = `
+    <h2>Respuestas Correctas</h2>
+    <p>Tienes ${correctAnswers} respuestas correctas de ${playQuiz.length} preguntas.</p>
+  `;
+}
+
+// Agregar un evento click al botón de enviar
+resultadoButton.addEventListener("click", () => {
+  showCorrectAnswers();
+});

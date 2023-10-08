@@ -1,6 +1,6 @@
 *{
     margin: 0%;
-    padding: 0%;
+    padding: 0.1px;
 }
 #container-princ{
     display: flex;
@@ -24,10 +24,24 @@ h1{
 #container-form {
     display: flex;
     flex-direction: column;
-    justify-content:center;
-    flex-flow:row wrap;
+    align-items: center; 
     background-color: black;
 }
+
+.calculate-button {
+    margin-top: 20px;
+/* Espacio entre las preguntas y el botón */
+}
+button{
+    font-size: 20px;
+    margin-bottom: 2%;
+
+}
+h2,p{
+    background-color: antiquewhite;
+}
+
+
 .question-container1,.question-container2,.question-container3,.question-container4, .question-container5, .question-container6,.question-container7,.question-container8,.question-container9,.question-container10{
     text-align: center;
     flex: 0 300px;
@@ -36,6 +50,11 @@ h1{
     background: whitesmoke;
     border-radius: 10px;
    
+}
+
+
+.calculate-button {
+    margin-top: 20px; /* Espacio entre las preguntas y el botón */
 }
 
 .img-container{
@@ -113,7 +132,7 @@ label:hover {
     }
     
 
-    .question-container1,.question-container2,.question-container3,.question-container4, .question-container5, .question-container6,.question-container7,.question-container8,.question-container9,.question-container10{
+    .question-container1,.question-container2,.question-container3,.question-container4, .question-container5, .question-container6,.question-container7,.question-container8,.question-container9,.question-container10,.question-container11{
         text-align: center;
         flex: 0 50%;
         margin: 2%;
