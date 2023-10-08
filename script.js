@@ -100,6 +100,47 @@ playQuiz.map((element, index) => {
   const answersContainer = document.createElement("div");
   answersContainer.classList.add("answers-container");
 
+  //condicional para meter imagen,sonido o video
+  if (element.imageLink) {
+    const imageContainer = document.createElement("div");
+    imageContainer.classList.add("image-container");
+    const imageLink = document.createElement("img");
+
+    imageLink.src = element.imageLink;
+    imageLink.alt = `Imagen de la pregunta ${index + 1}`;
+    imageContainer.appendChild(imageLink);
+
+    questionContainer.appendChild(imageContainer);
+  } else if (element.content && element.content.type === "audio") {
+    const audioContainer = document.createElement("div");
+    audioContainer.classList.add("audio-container");
+
+    const audio = document.createElement("audio");
+    audio.controls = true;
+    const source = document.createElement("source");
+
+    source.src = element.content.source;
+    source.type = "audio/mp4";
+
+    audio.appendChild(source);
+    audioContainer.appendChild(audio);
+    questionContainer.appendChild(audioContainer);
+  } else if (element.content && element.content.type === "video") {
+    const videoContainer = document.createElement("div");
+    videoContainer.classList.add("video-container");
+
+    const video = document.createElement("video");
+    video.controls = true;
+    const source = document.createElement("source");
+
+    source.src = element.content.source;
+    source.type = "video/mp4";
+
+    video.appendChild(source);
+    videoContainer.appendChild(video);
+    questionContainer.appendChild(videoContainer);
+  }
+
   element.respuestas.map((respuesta, i) => {
     const answerContainer = document.createElement("div");
     answerContainer.classList.add(`answ${i + 1}-container`);
@@ -119,7 +160,7 @@ playQuiz.map((element, index) => {
     answersContainer.appendChild(answerContainer);
   });
 
-  //crear div para cada respuesta con su clasemeter imagenes, videos y sonido, usar Condicional
+  //crear div para cada respuesta con su clase meter imagenes, videos y sonido, usar Condicional
 
   //crear input y label
 
@@ -130,3 +171,5 @@ playQuiz.map((element, index) => {
 });
 
 document.querySelector("main").appendChild(formulario);
+
+//faltan preguntas y dar el resultado de las correctas
