@@ -100,6 +100,25 @@ playQuiz.map((element, index) => {
   const answersContainer = document.createElement("div");
   answersContainer.classList.add("answers-container");
 
+  element.respuestas.map((respuesta, i) => {
+    const answerContainer = document.createElement("div");
+    answerContainer.classList.add(`answ${i + 1}-container`);
+
+    const answerInput = document.createElement("input");
+    answerInput.type = "radio";
+    answerInput.name = `question${index + 1}`;
+    answerInput.value = `respuesta${i + 1}`;
+
+    const answerLabel = document.createElement("label");
+    answerLabel.textContent = respuesta;
+    answerLabel.classList.add(`answ${i + 1}`);
+
+    answerContainer.appendChild(answerInput);
+    answerContainer.appendChild(answerLabel);
+
+    answersContainer.appendChild(answerContainer);
+  });
+
   //crear div para cada respuesta con su clasemeter imagenes, videos y sonido, usar Condicional
 
   //crear input y label
