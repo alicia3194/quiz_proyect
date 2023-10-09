@@ -1,93 +1,86 @@
 const playQuiz = [
   {
-    name: "¿Qué ves en la imagen?",
-    imageLink: "../image/img1.png",
-    respuestas: ["Unicornio", "El oso y el madreño", "Oso", "Logo WWF"],
-    respuestaCorrecta: "Unicornio",
+    name: "¿Cuál es la película de terror que presenta a un tiburón gigante que aterroriza a un pueblo costero??",
+    respuestas: ["Los Otros", "Tiburón", "Pesadilla en Elm Street", "Scream"],
+    respuestaCorrecta: "Tiburón",
   },
   {
-    name: "¿Cuál fue la primera película de Walt Disney?",
-    imageLink: "../image/img3.jpeg",
+    name: "¿Cuál es la película de terror en la que un grupo de amigos viaja a una cabaña en el bosque y se enfrenta a amenazas sobrenaturales?",
     respuestas: [
-      "Bambi",
-      "Blanca nieves y los siete enanitos",
-      "Los aristogatos",
-      "Tob y Toby",
+      "El Conjuro",
+      "El Exorcista",
+      "El Silencio de los Corderos",
+      "Cabin in the Woods",
     ],
-    respuestaCorrecta: "Blanca nieves y los siete enanitos",
+    respuestaCorrecta: "Cabin in the Woods",
   },
   {
-    name: "¿Cuántos círculos ves en la imagen?",
-    imageLink: "../image/img2.png",
-    respuestas: ["3", "6", "7", "Nigúno"],
-    respuestaCorrecta: "6",
-  },
-  {
-    name: "¿De que película es esta banda sonora?",
-    content: {
-      type: "audio",
-      source: "../audio/audio1.mp4",
-    },
-    respuestas: ["Troya", "Centurión", "Gladiator", "El señor de los Anillos"],
-    respuestaCorrecta: "Gladiator",
-  },
-  {
-    name: "Memoriza los objetos",
-    content: {
-      type: "video",
-      source: "../video/video2.mov",
-    },
-    respuestas: ["1, 5 y 8", "1, 3 y 7", "1, 5 y 6", "2, 4 y 7"],
-    respuestaCorrecta: "1,5 y 6",
-  },
-  {
-    name: "¿En qué película se dice esta frase?",
-    content: {
-      type: "video",
-      source: "../video/video1.mov",
-    },
-    respuestas: ["La sirenita", "Cenicienta", "Brave", "Ninguna de ellas"],
-    respuestaCorrecta: "Ninguna de ellas",
-  },
-  {
-    name: "¿Cuál es el alimento más peligroso del mundo?",
+    name: "En la película Pesadilla en Elm Street, ¿cuál es el nombre del famoso asesino de sueños que acecha a los jóvenes en sus pesadillas?",
     respuestas: [
-      "Pizza con piña",
-      "Broccoli",
-      "Albóndigas de serpiente",
-      "galletas sin chocolate",
+      "Jason Voorhees",
+      "Freddy Krueger",
+      "Michael Myers",
+      "Leatherface",
     ],
+    respuestaCorrecta: "Freddy Krueger",
   },
   {
-    name: "¿Cuál es el alimento más peligroso del mundo?",
+    name: "¿Cuál es la película de terror en la que una niña gira la cabeza 360 grados y vomita un líquido verde?",
     respuestas: [
-      "Pizza con piña",
-      "Broccoli",
-      "Albóndigas de serpiente",
-      "galletas sin chocolate",
+      "El Exorcista",
+      "El Conjuro",
+      "La Noche de los Muertos Vivientes",
+      "Saw",
     ],
+    respuestaCorrecta: "El Exorcista",
   },
   {
-    name: "¿De que película es esta banda sonora?",
-    content: {
-      type: "audio",
-      source: "../audio/audio2.mp4",
-    },
+    name: "¿Cuál es la película de terror en la que una niña poseída es sometida a un exorcismo por dos sacerdotes?",
+    respuestas: ["Carrie", "The Ring", "El Exorcista", "Annabelle"],
+    respuestaCorrecta: "El Exorcista",
+  },
+  {
+    name: "En la película de terror El Aro, ¿qué sucede cuando alguien ve una misteriosa cinta de video?",
     respuestas: [
-      "Benjamin Button",
-      "El niño con el pijama de rayas",
-      "La vida es bella",
-      "La vida de Brian",
+      "Reciben una llamada telefónica",
+      "Experimentan una muerte violenta en siete días",
+      "Se convierten en zombies",
+      "Obtienen poderes sobrenaturales",
     ],
-    respuestaCorrecta: "La vida es bella",
+    respuestaCorrecta: "Experimentan una muerte violenta en siete días",
   },
   {
-    name: "¿Cuál es el alimento más peligroso del mundo?",
+    name: "¿Cuál es la película de terror en la que una familia se muda a una casa encantada en Long Island, Nueva York, y es aterrorizada por fenómenos paranormales?",
     respuestas: [
-      "Pizza con piña",
-      "Broccoli",
-      "Albóndigas de serpiente",
-      "galletas sin chocolate",
+      "Annabelle",
+      "La Llorona",
+      "Amityville Horror",
+      "Actividad Paranormal",
+    ],
+    respuestaCorrecta: "Amityville Horror",
+  },
+  {
+    name: "En la película de terror Scream, ¿cuál es el icónico disfraz que usa el asesino para aterrorizar a sus víctimas?",
+    respuestas: [
+      "Máscara de payaso",
+      "Máscara de lobo",
+      "Máscara de calavera",
+      "Máscara de bruja",
+    ],
+    respuestaCorrecta: "Máscara de calavera",
+  },
+  {
+    name: "¿Cuál es la película de terror en la que un grupo de adolescentes se enfrenta a un asesino enmascarado en un campamento de verano?",
+    respuestas: ["Viernes 13", "Halloween", "Carrie", "The Ring"],
+    respuestaCorrecta: "Halloween",
+  },
+  {
+    name: "En la película de terror Poltergeist, ¿qué objeto se desliza por el suelo y atrae la atención de la niña Carol Anne?",
+    respuestas: [
+      "Una muñeca diabólica",
+      "Una televisión embrujada",
+      "Un árbol aterrador",
+      "Un coche en miniatura",
     ],
   },
 ];
@@ -108,45 +101,6 @@ playQuiz.forEach((element, index) => {
   answersContainer.classList.add("answers-container");
 
   // Condicional para agregar imagen, audio o video
-  if (element.imageLink) {
-    const imageContainer = document.createElement("div");
-    imageContainer.classList.add("image-container");
-    const imageLink = document.createElement("img");
-
-    imageLink.src = element.imageLink;
-    imageLink.alt = `Imagen de la pregunta ${index + 1}`;
-    imageContainer.appendChild(imageLink);
-
-    questionContainer.appendChild(imageContainer);
-  } else if (element.content && element.content.type === "audio") {
-    const audioContainer = document.createElement("div");
-    audioContainer.classList.add("audio-container");
-
-    const audio = document.createElement("audio");
-    audio.controls = true;
-    const source = document.createElement("source");
-
-    source.src = element.content.source;
-    source.type = "audio/mp4";
-
-    audio.appendChild(source);
-    audioContainer.appendChild(audio);
-    questionContainer.appendChild(audioContainer);
-  } else if (element.content && element.content.type === "video") {
-    const videoContainer = document.createElement("div");
-    videoContainer.classList.add("video-container");
-
-    const video = document.createElement("video");
-    video.controls = true;
-    const source = document.createElement("source");
-
-    source.src = element.content.source;
-    source.type = "video/mp4";
-
-    video.appendChild(source);
-    videoContainer.appendChild(video);
-    questionContainer.appendChild(videoContainer);
-  }
 
   element.respuestas.forEach((respuesta, i) => {
     const answerContainer = document.createElement("div");
