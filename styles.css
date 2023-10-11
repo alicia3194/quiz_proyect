@@ -135,7 +135,7 @@ label:hover {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-image: url('../image/fondo11.jpeg');
+        background-image: url('image/fondo11.jpeg');
         background-size: cover;
         background-position: center;
       }
