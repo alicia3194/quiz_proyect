@@ -7,8 +7,8 @@
 1. Clona o descarga este repositorio en tu máquina local.
 2. Abre el archivo `index.html` en tu navegador web.
 3. Selecciona las respuestas a las preguntas haciendo clic en la opción que creas correcta.
-4. Haz clic en el botón "Siguiente" para pasar a la siguiente pregunta.
-5. Después de responder a las diez preguntas, se mostrará tu puntaje final y un mensaje divertido de acuerdo con tu desempeño.
+4. Después de responder a las diez preguntas, se mostrará tu puntaje final.
+5. Url https://alicia3194.github.io/quiz_proyect/
 
 ¿Tienes lo que se necesita para convertirte en un maestro del cine de terror? ¡Demuéstralo!
 
